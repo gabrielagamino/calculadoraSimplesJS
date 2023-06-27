@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            background-color: rgb(110, 110, 110);
+            font-family:Arial, Helvetica, sans-serif
+        }
+        main {
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            border-radius: 20px;
+            width: 50vw;
+            height: 50vh;
+            margin: auto;
+            padding-bottom: 20px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.233)
+            
+        }
+        div#res{
+            margin-top: 30px;
+        }
+        
+        p, input{
+            margin: 5px;
+        }
+
+        input.btn {
+            font-size: 1.4em;
+            padding: 3px;
+            background-color: pink;
+            border-color: rgba(0, 0, 0, 0.733);
+            border-radius: 6px;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Calculadora</h1>
+        <p>Número 1: <input type="number" name="txtn1" id="itxtn1"></p>
+        <p>Número 2: <input type="number" name="txtn2" id="itxtn2"></p>
+        <input type="button" class="btn" value="Somar" onclick="somar()">
+        <input type="button" class="btn" value="Subtrair" onclick="subtrair()">
+        <input type="button" class="btn" value="Multiplicar" onclick="multiplicar()">
+        <input type="button" class="btn" value="Dividir" onclick="dividir()">
+        <div id="res"></div>
+    </main>
+
+    <script>
+        var txt1 = document.getElementById('itxtn1');
+        var txt2 = document.getElementById('itxtn2');
+            
+        function somar(n1,n2) {
+            var n1 = Number(txt1.value);
+            var n2 = Number(txt2.value);
+            
+            var soma = n1 + n2; 
+
+            var res = document.getElementById('res');
+            res.innerHTML= `A soma é <strong>${soma}</strong>!`            
+
+        }
+
+        function subtrair(n1,n2){
+            var n1 = Number(txt1.value);
+            var n2 = Number(txt2.value);
+            var sub = n1 - n2; 
+
+            var res = document.getElementById('res');
+            res.innerHTML= `A subtração é <strong>${sub}</strong>!` 
+
+        }
+
+        function multiplicar(n1,n2){
+            var n1 = Number(txt1.value);
+            var n2 = Number(txt2.value);
+            var mult = n1 * n2; 
+
+            var res = document.getElementById('res');
+            res.innerHTML= `A multiplicação é <strong>${mult}</strong>!` 
+
+        }
+
+        function dividir(n1,n2){
+            var n1 = Number(txt1.value);
+            var n2 = Number(txt2.value);
+            var div = n1 / n2; 
+
+            var res = document.getElementById('res');
+            res.innerHTML= `A divisão é <strong>${div}</strong>!`
+        }
+
+
+    </script>
+
+
+</body>
+</html>
